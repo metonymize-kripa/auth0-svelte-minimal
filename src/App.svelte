@@ -9,40 +9,36 @@
   });
 </script>
 
+<script>
+import {
+  Auth0Context,
+  Auth0LoginButton,
+  Auth0LogoutButton,
+  authError,
+  authToken,
+  idToken,
+  isAuthenticated,
+  isLoading,
+  login,
+  logout,
+  userInfo,
+} from '@dopry/svelte-auth0';
+</script>
+
 <main>
-  <h1>Svelte + Node.js API</h1>
-  <h2>
-    Deployed with
-    <a href="https://vercel.com/docs" target="_blank" rel="noreferrer noopener">
-      Vercel
-    </a>
-    !
-  </h2>
-  <p>
-    <a
-      href="https://github.com/vercel/vercel/tree/master/examples/svelte"
-      target="_blank"
-      rel="noreferrer noopener">
-      This project
-    </a>
-    is a
-    <a href="https://svelte.dev/">Svelte</a>
-    app with three directories,
-    <code>/public</code>
-    for static assets,
-    <code>/src</code>
-    for components and content, and
-    <code>/api</code>
-    which contains a serverless
-    <a href="https://nodejs.org/en/">Node.js</a>
-    function. See
-    <a href="/api/date">
-      <code>api/date</code>
-      for the Date API with Node.js
-    </a>
-    .
-  </p>
+  <h1>Svelte + Autho0 API</h1>
   <br />
   <h2>The date according to Node.js is:</h2>
   <p>{date ? date : 'Loading date...'}</p>
 </main>
+
+<Auth0Context domain="dev-hvw40i79.auth0.com" client_id="aOijZt2ug6Ovgzp0HXdF23B6zxwA6PaP">
+  <Auth0LoginButton class="btn">Login</Auth0LoginButton>
+  <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
+  <pre>isLoading: {$isLoading}</pre>
+  <pre>isAuthenticated: {$isAuthenticated}</pre>
+  <pre>authToken: {$authToken}</pre>
+  <pre>idToken: {$idToken}</pre>
+  <pre>userInfo: {JSON.stringify($userInfo, null, 2)}</pre>
+  <pre>authError: {$authError}</pre>
+</Auth0Context>
