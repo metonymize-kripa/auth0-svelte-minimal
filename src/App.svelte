@@ -7,9 +7,7 @@
     const newDate = await res.text();
     date = newDate;
   });
-</script>
 
-<script>
 import {
   Auth0Context,
   Auth0LoginButton,
