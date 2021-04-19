@@ -30,7 +30,7 @@ import {
   <p>{date ? date : 'Loading date...'}</p>
 </main>
 
-<Auth0Context domain="dev-hvw40i79.auth0.com" client_id="aOijZt2ug6Ovgzp0HXdF23B6zxwA6PaP">
+<Auth0Context domain="dev-gh9on756.us.auth0.com" client_id="lDh9u5tdu1Kk5CkXtZjmjjmUKuGARk0v">
   <Auth0LoginButton class="btn">Login</Auth0LoginButton>
   <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
   <pre>isLoading: {$isLoading}</pre>
