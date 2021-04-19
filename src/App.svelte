@@ -23,13 +23,6 @@ import {
 } from '@dopry/svelte-auth0';
 </script>
 
-<main>
-  <h1>Svelte + Autho0 API</h1>
-  <br />
-  <h2>The date according to Node.js is:</h2>
-  <p>{date ? date : 'Loading date...'}</p>
-</main>
-
 <Auth0Context domain="dev-gh9on756.us.auth0.com" client_id="lDh9u5tdu1Kk5CkXtZjmjjmUKuGARk0v">
   <Auth0LoginButton class="btn">Login</Auth0LoginButton>
   <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
