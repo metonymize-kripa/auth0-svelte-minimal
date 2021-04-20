@@ -23,6 +23,9 @@ import {
 } from '@dopry/svelte-auth0';
 </script>
 
+<img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
+/>
+
 <Auth0Context domain="dev-gh9on756.us.auth0.com" client_id="lDh9u5tdu1Kk5CkXtZjmjjmUKuGARk0v">
   <Auth0LoginButton class="btn">Login</Auth0LoginButton>
   <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
