@@ -23,6 +23,7 @@ import {
 } from '@dopry/svelte-auth0';
 </script>
 
+<h1> Test avataar </h1>
 <img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
 />
 
