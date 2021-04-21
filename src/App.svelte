@@ -108,7 +108,7 @@ margin:1rem auto;
    <pre>Email: {$userInfo["email"]}</pre>
 </Auth0Context>
 <body>
-<div class="row">
+<div class="row card">
   <div class="col-2"></div>
   <div class="col-8">
     <iframe width="100%" height="420"  src="https://public.com/stocks/{ticker}/embed" frameborder="0" allow="encrypted-media" allowfullscreen allowtransparency></iframe>
@@ -122,13 +122,12 @@ margin:1rem auto;
 </div>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-                          width="50"
-/></div>
+                          width="50" /></div>
   <div class="col-6"><RangeSlider  pips all='label' disable={true} bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance-3}%</span></div>
 </div>
 <div class="row card">
-  <div class="col-3"><img src={$userInfo["picture"]} width="50"</div>
+  <div class="col-3"><img src={$userInfo["picture"]} width="50" /></div>
   <div class="col-6"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</span></div>
 </div>
