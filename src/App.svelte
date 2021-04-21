@@ -80,6 +80,7 @@ let post_title =  encodeURIComponent("Check it out: I just FOMO optimized ");
 body {
 max-width:90rem;
 margin:0 auto;
+padding:2rem;
 }
 .card{
 margin:1rem auto;
@@ -102,8 +103,8 @@ margin:1rem auto;
 -->
 
 <body>
-  
-  
+
+
   <Auth0Context domain="dev-gh9on756.us.auth0.com" client_id="lDh9u5tdu1Kk5CkXtZjmjjmUKuGARk0v">
     {#if !$isAuthenticated}
     <h1> Login to get Oracled</h1>
@@ -115,13 +116,13 @@ margin:1rem auto;
   </Auth0Context>
 
 <div class="row card">
-  <div class="col-2"></div>
+  <div class="col-1"></div>
   <div class="col-8">
     <iframe width="100%" height="420"  src="https://public.com/stocks/{ticker}/embed" frameborder="0" allow="encrypted-media" allowfullscreen allowtransparency></iframe>
   </div>
-    <div class="col-2"></div>
+    <div class="col-1"></div>
 </div>
-  
+
     <h1> 💎Oracle Rating Engine: Options Implied 1 Week Gain Odds </h1>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
@@ -129,7 +130,7 @@ margin:1rem auto;
   <div class="col-6"><RangeSlider  disabled={true} float pips all='label' bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance}%</span> <br> 1Wk Gain Odds </div>
 </div>
-  
+
 {#if $isAuthenticated}
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=Pink&eyeType=EyeRoll&eyebrowType=UnibrowNatural&mouthType=Twinkle&skinColor=Tanned'
@@ -142,8 +143,39 @@ margin:1rem auto;
   <div class="col-6"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</span> <br> 1Wk Gain Odds </div>
 </div>
+{/if}
+
+<div class="row card">
+<table>
+<thead>
+  <tr>
+    <th width="20%" class="text-center "></th>
+    <th width="50%" class="text-center">How much do I like this</th>
+    <th width="30%" class="text-center is-large">1Wk Gain Odds</th>
+  </tr>
+</thead>
+  <tr>
+    <td width="20%"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
+                            width="50" /> <br> Fat Tony </td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={fat_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance}%</td>
+  </tr>
+  {#if $isAuthenticated}
+  <tr>
+    <td width="20%"><img src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=Pink&eyeType=EyeRoll&eyebrowType=UnibrowNatural&mouthType=Twinkle&skinColor=Tanned'
+                            width="50" /><br> Friends </td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={friend_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance-3}%</td>
+  </tr>
+  <tr>
+    <td width="20%"><img src={$userInfo["picture"]} width="50" /> <br> {$userInfo["email"]}</td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</td>
+  </tr>
   {/if}
-  
+</table>
+</div>
+
 <a style="color:#168ed7;font-size:2rem;" href="https://twitter.com/share?url={post_url}{ticker}&text={post_title}{ticker}&hashtags=fomo,oracled.com" class="button fa fa-twitter pull-left"></a>
 <button class="text-white bg-dark pull-right" on:click={updateClipboard(show_kelly)}>Copy-Trade</button>
 
