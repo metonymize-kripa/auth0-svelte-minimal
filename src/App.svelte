@@ -104,7 +104,8 @@ margin:1rem auto;
   <Auth0LoginButton class="btn">Login</Auth0LoginButton>
   <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
   <pre>isAuthenticated: {$isAuthenticated}</pre>
-  <pre>userInfo: {JSON.stringify($userInfo, null, 2)}</pre>
+  <pre>Gravataar: {$userInfo["picture"]}</pre>
+   <pre>Email: {$userInfo["email"]}</pre>
 </Auth0Context>
 <body>
 <div class="row">
@@ -115,20 +116,19 @@ margin:1rem auto;
     <div class="col-2"></div>
 </div>
 <div class="row card">
-  <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-/></div>
+  <div class="col-3"></div>
   <div class="col-6"><RangeSlider  pips all='label'  bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance}%</span></div>
 </div>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
+                          width="50"
 /></div>
   <div class="col-6"><RangeSlider  pips all='label' disable={true} bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance-3}%</span></div>
 </div>
 <div class="row card">
-  <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-/></div>
+  <div class="col-3"><img src={$userInfo["picture"]} width="50"</div>
   <div class="col-6"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</span></div>
 </div>
@@ -136,19 +136,19 @@ margin:1rem auto;
 <table>
   <tr>
     <td width="20%"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-/></td>
+                          width="50" /></td>
     <td width="50%"><RangeSlider float pips all='label'  bind:values={fat_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
     <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance}%</td>
   </tr>
   <tr>
     <td width="20%"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-/></td>
+                          width="50" /></td>
     <td width="50%"><RangeSlider float pips all='label'  bind:values={friend_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
     <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance-3}%</td>
   </tr>
   <tr>
     <td width="20%"><img src='https://avataaars.io/?avatarStyle=Circle&topType=WinterHat4&accessoriesType=Sunglasses&hatColor=PastelRed&facialHairType=BeardMedium&facialHairColor=Auburn&clotheType=CollarSweater&clotheColor=Pink&eyeType=Dizzy&eyebrowType=UpDown&mouthType=Smile&skinColor=Pale'
-/></td>
+                          width="50" /></td>
     <td width="50%"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
     <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</td>
   </tr>
