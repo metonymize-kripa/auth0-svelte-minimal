@@ -122,9 +122,8 @@ margin:1rem auto;
     <div class="col-2"></div>
 </div>
   
-    <h1> 💎Oracle Social Rating Engine </h1>
+    <h1> 💎Oracle Rating Engine: Options Implied 1 Week Gain Odds </h1>
 <div class="row card">
-  <h2> Options Implied 1 Week Gain Odds </h2>
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
                           width="50" /> <br> Fat Tony </div>
   <div class="col-6"><RangeSlider  disabled={true} float pips all='label' bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
