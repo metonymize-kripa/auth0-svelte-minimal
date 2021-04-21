@@ -117,7 +117,6 @@ margin:1rem auto;
     <div class="col-2"></div>
 </div>
   
-{#if $isAuthenticated}
     <h1> 💎Oracle Social Rating Engine </h1>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
@@ -125,6 +124,8 @@ margin:1rem auto;
   <div class="col-6"><RangeSlider  disabled={true} float pips all='label' bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance}%</span></div>
 </div>
+  
+{#if $isAuthenticated}
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=Pink&eyeType=EyeRoll&eyebrowType=UnibrowNatural&mouthType=Twinkle&skinColor=Tanned'
                           width="50" /><br> Friends </div>
@@ -136,8 +137,10 @@ margin:1rem auto;
   <div class="col-6"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</span> <br> Gain Odds </div>
 </div>
+  {/if}
+  
 <a style="color:#168ed7;font-size:2rem;" href="https://twitter.com/share?url={post_url}{ticker}&text={post_title}{ticker}&hashtags=fomo,oracled.com" class="button fa fa-twitter pull-left"></a>
 <button class="text-white bg-dark pull-right" on:click={updateClipboard(show_kelly)}>Trade</button>
-{/if}
+
 
 </body>
