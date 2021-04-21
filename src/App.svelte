@@ -116,13 +116,13 @@ margin:1rem auto;
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
                           width="50" /> <br> Fat Tony </div>
-  <div class="col-6"><RangeSlider  disable={true} bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
+  <div class="col-6"><RangeSlider  disabled={true} float pips all='label' bind:values={fat_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance}%</span></div>
 </div>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=Pink&eyeType=EyeRoll&eyebrowType=UnibrowNatural&mouthType=Twinkle&skinColor=Tanned'
                           width="50" /><br> Friends </div>
-  <div class="col-6"><RangeSlider  disable={true} bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
+  <div class="col-6"><RangeSlider  disabled={true} float pips all='label' bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance-3}%</span></div>
 </div>
 <div class="row card">
