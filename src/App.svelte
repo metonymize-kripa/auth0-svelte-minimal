@@ -117,7 +117,7 @@ margin:1rem auto;
     <div class="col-2"></div>
 </div>
   
-{#if {$isAuthenticated}
+{#if {$isAuthenticated}}
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
                           width="50" /> <br> Fat Tony </div>
