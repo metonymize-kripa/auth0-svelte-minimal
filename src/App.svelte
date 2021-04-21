@@ -8,7 +8,7 @@
   import RangeSlider from "svelte-range-slider-pips";
   let api_output ={};
 
-  const moods = ["Strong Sell","","","","","Sell","","","","","Hold","","","😐","😥","Buy","","","","","Strong Buy"];
+  const moods = ["Strong Sell","😫","😫","😫","😥","Sell","😥","😐","😐","😐","Hold","😐","😀","😀","😀","Buy","😀","😁","😁","😁","Strong Buy"];
 
   onMount(async () => {
     const res = await fetch("/api/date");
@@ -115,13 +115,32 @@ margin:1rem auto;
 </div>
 <div class="row card">
   <div class="col-3"></div>
-  <div class="col-6"><RangeSlider  pips all='label'  bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
+  <div class="col-6"><RangeSlider  pips all='label' disable={true} bind:values={friend_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{gain_chance-3}%</span></div>
 </div>
 <div class="row card">
   <div class="col-3"></div>
   <div class="col-6"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={5} min={-10} max={10} formatter={ v => moods[v+10] }/></div>
   <div class="col-3 text-center "><span style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</span></div>
+</div>
+<div class="row card">
+<table>
+  <tr>
+    <td width="20%">Image</td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={fat_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance}%</td>
+  </tr>
+  <tr>
+    <td width="20%">Image</td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={friend_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{gain_chance-3}%</td>
+  </tr>
+  <tr>
+    <td width="20%">Image</td>
+    <td width="50%"><RangeSlider float pips all='label'  bind:values={show_kelly}  pipstep={10} min={-10} max={10} formatter={ v => moods[v+10] }/></td>
+    <td width="30%" class="text-center" style="font-size:4rem;color:purple;">{Math.round(((3*show_kelly/100)+varx)*100/(1+varx))}%</td>
+  </tr>
+</table>
 </div>
 <a style="color:#168ed7;font-size:2rem;" href="https://twitter.com/share?url={post_url}{ticker}&text={post_title}{ticker}&hashtags=fomo,oracled.com" class="button fa fa-twitter pull-left"></a>
 <button class="text-white bg-dark pull-right" on:click={updateClipboard(show_kelly)}>Trade</button>
