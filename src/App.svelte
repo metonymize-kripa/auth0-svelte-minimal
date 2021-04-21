@@ -102,11 +102,12 @@ margin:1rem auto;
 -->
 
 <body>
-  <h1> Login and get Oracled </h1>
+  <h1> Login to get Oracled</h1>
   
   <Auth0Context domain="dev-gh9on756.us.auth0.com" client_id="lDh9u5tdu1Kk5CkXtZjmjjmUKuGARk0v">
   <Auth0LoginButton class="btn">Login</Auth0LoginButton>
   <Auth0LogoutButton class="btn">Logout</Auth0LogoutButton>
+  </Auth0Context>
 
 <div class="row card">
   <div class="col-2"></div>
@@ -116,7 +117,8 @@ margin:1rem auto;
     <div class="col-2"></div>
 </div>
   
-{#if {$isAuthenticated}}
+{#if $isAuthenticated}
+    <h1> 💎Oracle Social Rating Engine </h1>
 <div class="row card">
   <div class="col-3"><img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesarSidePart&accessoriesType=Kurt&hairColor=Brown&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Angry&mouthType=Serious&skinColor=Pale'
                           width="50" /> <br> Fat Tony </div>
@@ -137,5 +139,5 @@ margin:1rem auto;
 <a style="color:#168ed7;font-size:2rem;" href="https://twitter.com/share?url={post_url}{ticker}&text={post_title}{ticker}&hashtags=fomo,oracled.com" class="button fa fa-twitter pull-left"></a>
 <button class="text-white bg-dark pull-right" on:click={updateClipboard(show_kelly)}>Trade</button>
 {/if}
-  </Auth0Context>
+
 </body>
